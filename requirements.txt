@@ -1,0 +1,6 @@
+requests
+beautifulsoup4
+python-frontmatter
+markdown2
+Jinja2
+openai 

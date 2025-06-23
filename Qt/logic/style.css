@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+:root {
+    --primary-color: #007bff;
+    --background-color: #f8f9fa;
+    --card-background: #ffffff;
+    --text-color: #333;
+    --light-text-color: #666;
+    --border-color: #e9ecef;
+    --shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+h1 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.filter-section {
+    background-color: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#tag-filter-group {
+    align-items: flex-start;
+}
+
+.filter-group:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.filter-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--primary-color);
+    width: 60px; /* 固定宽度以便对齐 */
+}
+
+.topic-filter, .tag-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    flex-grow: 1; /* 让标签容器填充剩余空间 */
+}
+
+.tag-filter {
+    max-height: 50px; /* 默认只显示大约一行的高度(微调以避免切割) */
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.tag-filter.expanded {
+    max-height: 500px; /* 一个足够大的值来显示所有标签 */
+}
+
+.topic-tag, .tag-filter .tag {
+    background-color: var(--card-background);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-size: 0.9rem;
+}
+
+.topic-tag:hover, .topic-tag.active, .tag-filter .tag:hover, .tag-filter .tag.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#posts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.post-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in-out;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+}
+
+.post-header {
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--light-text-color);
+    border-bottom: 1px solid var(--border-color);
+    align-items: center;
+}
+
+.post-author {
+    font-weight: 500;
+}
+
+.post-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.post-theme {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.post-content {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.post-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+    background-color: #fcfdff;
+}
+
+.post-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--light-text-color);
+    margin-bottom: 1rem;
+}
+
+.digested-badge {
+    background-color: #ffc107;
+    color: #333;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag-label {
+    background-color: var(--border-color);
+    color: var(--light-text-color);
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+}
+
+/* For hidden cards */
+.post-card.hidden {
+    display: none;
+}
+
+.topic-badge {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.3rem 0.7rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.post-digest {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border-color);
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+}
+
+.post-digest strong {
+    color: var(--text-color);
+}
+
+#pagination-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+} 
