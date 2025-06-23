@@ -24,4 +24,9 @@ Thumbs.db
 
 # Other
 .cursorignore
-package-lock.json 
+package-lock.json
+
+# Project structure specific ignores
+# Ignore .py and .md files in the root directory
+/*.py
+/*.md 
