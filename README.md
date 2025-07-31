@@ -4,7 +4,7 @@
 
 一款功能强大的知识星球内容抓取、处理、归档和浏览的桌面工具，为您提供一站式知识管理解决方案。
 
-![GUI Screenshot](https:/github.com/helpfulcraft/zsxqtool/master/main_gui.png)
+![GUI Screenshot](https:/github.com/helpfulcraft/zsxqtool/master/main_GUI.png)
 
 ---
 
