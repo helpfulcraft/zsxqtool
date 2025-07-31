@@ -4,3 +4,4 @@ python-frontmatter
 markdown2
 Jinja2
 openai 
+PySide6
